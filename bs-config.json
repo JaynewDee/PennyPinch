@@ -1,5 +1,0 @@
-{
-     "port": 3000,
-     "files": ["./public/**/*.{html, css, js}", "./routes/**"],
-     "server": { "baseDir": "./public"}
-}
