@@ -3,7 +3,7 @@
      "short_name": "PennyPinch",
      "icons": [
        {
-         "src": "public/icons/dollar-coin.png",
+         "src": "/icons/dollar-coin.png",
          "sizes": "192x192",
          "type": "image/png"
        }
