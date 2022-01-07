@@ -1,5 +1,6 @@
 let transactions = [];
 let myChart;
+const {checkForIndexedDb} = require('./iDb');
 
 fetch("/api/transaction")
   .then(response => {
@@ -136,6 +137,10 @@ function sendTransaction(isAdding) {
   })
   .catch(err => {
     // fetch failed, so save in indexed db
+    checkForIndexedDb();
+    if (checkForIndexedDb === true) {
+      
+    }
     saveRecord(transaction);
 
     // clear form
