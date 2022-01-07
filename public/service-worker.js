@@ -6,6 +6,7 @@ const STATICS = [
      "/",
      "/index.html",
      "/index.js",
+     "/iDb.js",
      "/styles.css",
      "manifest.webmanifest",
      "/icons/dollar-coin.png"

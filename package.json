@@ -1,11 +1,13 @@
 {
-  "name": "budget-app",
+  "name": "pennypinch",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "cd public && npm run build",
+    "client": "cd public && npm start"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,9 @@
     "express": "^4.17.1",
     "mongoose": "^5.5.15",
     "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
   }
 }
