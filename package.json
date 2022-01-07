@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "client": "cd public && npm start",
-    "build": "webpack --watch"
+    "client": "cd public && npm start"
   },
   "repository": {
     "type": "git",
