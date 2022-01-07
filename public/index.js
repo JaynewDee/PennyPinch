@@ -1,6 +1,5 @@
 let transactions = [];
 let myChart;
-import { checkForIndexedDb, saveRecord } from './iDb';
 
 fetch("/api/transaction")
   .then(response => {
@@ -137,12 +136,8 @@ function sendTransaction(isAdding) {
   })
   .catch(err => {
     // fetch failed, so save in indexed db
-    checkForIndexedDb();
-    if (checkForIndexedDb === true) {
-      saveRecord("pennyDb", "transactions", "post", transaction);
-    }
+      saveRecord(transaction);
     
-
     // clear form
     nameEl.value = "";
     amountEl.value = "";

@@ -1,5 +1,3 @@
-console.log('Service worker says hi!');
-
 const CACHE_NAME = "penny-static-v1";
 const DATA_CACHE_NAME = "penny-data-v1";
 const STATICS = [
@@ -12,12 +10,12 @@ const STATICS = [
      "/icons/dollar-coin.png"
 ];
 
-self.addEventListener("install", (e) => {
+self.addEventListener("install",  (e) => {
      e.waitUntil(
           caches.open(DATA_CACHE_NAME).then((cache) => cache.add("/api/transaction"))
      );
      e.waitUntil(
-          caches.open(CACHE_NAME).then((cache) => cache.addAll(STATICS))
+          caches.open(CACHE_NAME).then( (cache) => cache.addAll(STATICS))
      );
      self.skipWaiting();
 })
@@ -41,24 +39,24 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
      if (e.request.url.includes("/api")) {
           e.respondWith(
-               caches.open(DATA_CACHE_NAME).then(cache => {
-                    return fetch(e.request)
-                         .then(res => {
-                              if (res.status === 200) {
-                                   cache.put(e.request.url, response.clone());
-                              }
-                              return res;
-                         })
-                         .catch(err => {
-                              return cache.match(e.request);
-                         });
+               caches.open(DATA_CACHE_NAME)
+               .then(async cache => {
+                    try {
+                         const res = await fetch(e.request);
+                         if (res.status === 200) {
+                              cache.put(e.request.url, res.clone());
+                         }
+                         return res;
+                    } catch (err) {
+                         return cache.match(e.request);
+                    }
                }).catch(err => console.log(err))
           );
           return;
      }
      e.respondWith(
           caches.open(CACHE_NAME).then(cache => {
-               return cache.match(e.request).then(res => {
+               return cache.match(e.request).then( res => {
                     return res || fetch(e.request)
                })
           })

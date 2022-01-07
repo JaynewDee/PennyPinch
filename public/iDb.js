@@ -1,45 +1,71 @@
-export function checkForIndexedDb() {
-     if (!window.indexedDB) {
-          console.log("Your browser doesn't support a stable version of IndexedDB.");
-          return false;
-        }
-        return true;
-}
+let db;
 
-export function saveRecord(databaseName, storeName, method, object) {
-     return new Promise((resolve, reject) => {
-          const request = window.indexedDB.open(databaseName, 1);
+const transactionStore = 'Transactions';
+const request = indexedDB.open('pennyDB', 1);
 
-          let db, tx, store;
+request.onupgradeneeded = function (e) {
+     const {
+          oldVersion
+     } = e;
+     const newVersion = e.newVersion || db.version;
+     console.log(`PennyDB UPDATED from version ${oldVersion} to ${newVersion}`);
 
-          request.onupgradeneeded = (e) => {
-               const db = request.result;
-               db.createObjectStore(storeName);
-          };
-          request.onerror = (e) => {
-               console.log("There was an error using indexedDB! =(")
+     db = e.target.result;
+
+     if (db.objectStoreNames.length === 0) {
+          db.createObjectStore(transactionStore, {
+               autoIncrement: true
+          });
+     }
+};
+
+request.onsuccess = function (e) {
+     db = e.target.result;
+
+     if (navigator.onLine) {
+          checkDatabase();
+     }
+};
+
+request.onerror = function (e) {
+     console.log(`Error: ${e.target.errorCode}`);
+};
+
+function checkDatabase() {
+
+     let transaction = db.transaction([transactionStore], 'readwrite')
+          .objectStore(transactionStore)
+          .getAll();
+
+     transaction.onsuccess = function () {
+          if (transaction.result.length > 0) {
+               fetch('/api/transaction/bulk', {
+                         method: 'POST',
+                         body: JSON.stringify(transaction.result),
+                         headers: {
+                              Accept: 'application/json, text/plain, */*',
+                              'Content-Type': 'application/json',
+                         },
+                    })
+                    .then((response) => response.json())
+                    .then((res) => {
+                         if (res.length !== 0) {
+                                   clearStore()
+                         }
+                    });
           }
-          request.onsuccess = (e) => {
-               db = request.result;
-               tx = db.transaction(storeName, "readwrite");
-               store = tx.objectStore(storeName);
-
-               db.onerror = function(e) {
-                    console.log("Error in IDB onsuccess method")
-               }
-
-               if (method === "post") {
-                    store.put(object);
-               } else if (method === "get") {
-                    const all = store.getAll();
-                    all.onsuccess = () => {
-                         resolve(all.result);
-                    }
-               }
-               tx.oncomplete = () => {
-                    db.close();
-               }
-          }
-     })
+     };
 }
+function clearStore() {
+     db.transaction([transactionStore], 'readwrite')
+     .objectStore(transactionStore)
+     .clear();
+}
+const saveRecord = async (record) => {
+     await
+     db.transaction([transactionStore], 'readwrite')
+          .objectStore(transactionStore)
+          .add(record);
+};
 
+window.addEventListener('online', checkDatabase)
