@@ -4,7 +4,6 @@
 > **TAGLINE**
 
 ## *DESCRIPTION* 
-
 > 
 > 
 >>  
@@ -26,9 +25,7 @@
 >> - 
 >> - 
 
-  
-      
-> *Note: The click-through links contained within the discussion sections may send you to an external site.*
+> *Note: The click-through links contained within the discussion sections may send you to an external site.* <br>
 ___  
 ___
 ___
@@ -93,7 +90,7 @@ ___
 >>>>>>>>> --- Joshua <br> <br>
 
 
-## About the Author
+## About the Creator
 
 > ### *Joshua Newell Diehl*
 >>>  

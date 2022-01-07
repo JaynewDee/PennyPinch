@@ -135,6 +135,7 @@ function sendTransaction(isAdding) {
     }
   })
   .catch(err => {
+      console.log("Intercepting offline fetch with iDB data.")
     // fetch failed, so save in indexed db
       saveRecord(transaction);
     

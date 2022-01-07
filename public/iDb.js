@@ -1,8 +1,19 @@
 let db;
-
+// Define string name value of primary objectStore
 const transactionStore = 'Transactions';
+// Store iDB session as variable
 const request = indexedDB.open('pennyDB', 1);
 
+
+async function saveRecord(record) {
+     await
+     db.transaction([transactionStore], 'readwrite')
+          .objectStore(transactionStore)
+          .add(record);
+};
+
+
+// Checks for changes to iDB and updates accordingly, creates objectStore if not present
 request.onupgradeneeded = function (e) {
      const {
           oldVersion
@@ -19,7 +30,10 @@ request.onupgradeneeded = function (e) {
      }
 };
 
+// Checks 
 request.onsuccess = function (e) {
+     console.log(e.target.result)
+
      db = e.target.result;
 
      if (navigator.onLine) {
@@ -61,11 +75,6 @@ function clearStore() {
      .objectStore(transactionStore)
      .clear();
 }
-const saveRecord = async (record) => {
-     await
-     db.transaction([transactionStore], 'readwrite')
-          .objectStore(transactionStore)
-          .add(record);
-};
+
 
 window.addEventListener('online', checkDatabase)

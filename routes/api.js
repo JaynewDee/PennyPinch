@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Transaction = require("../models/transaction.js");
 
+// Handle requests for new transaction post
 router.post("/api/transaction", ({body}, res) => {
   Transaction.create(body)
     .then(dbTransaction => {
@@ -11,6 +12,7 @@ router.post("/api/transaction", ({body}, res) => {
     });
 });
 
+// Handle requests for populating from offline IndexedDB
 router.post("/api/transaction/bulk", ({body}, res) => {
   Transaction.insertMany(body)
     .then(dbTransaction => {
@@ -21,6 +23,7 @@ router.post("/api/transaction/bulk", ({body}, res) => {
     });
 });
 
+// Handle population of table and chart
 router.get("/api/transaction", (req, res) => {
   Transaction.find({}).sort({date: -1})
     .then(dbTransaction => {

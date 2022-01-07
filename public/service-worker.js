@@ -1,16 +1,17 @@
 const CACHE_NAME = "penny-static-v1";
 const DATA_CACHE_NAME = "penny-data-v1";
+// Define all static files to be cached locally
 const STATICS = [
      "/",
      "/index.html",
      "dist/bundle.js",
-     // "/iDb.js",
      "/styles.css",
      "dist/manifest.json",
      "/dist/assets/icons/icon_192x192.png",
      "/dist/assets/icons/icon_512x512.png"
 ];
 
+// Initialize service worker and caches
 self.addEventListener("install",  (e) => {
      e.waitUntil(
           caches.open(DATA_CACHE_NAME).then((cache) => cache.add("/api/transaction"))
@@ -21,6 +22,7 @@ self.addEventListener("install",  (e) => {
      self.skipWaiting();
 })
 
+// Refresh cache by checking for changes
 self.addEventListener("activate", (e) => {
      e.waitUntil(
           caches.keys().then(keyList => {
@@ -37,6 +39,7 @@ self.addEventListener("activate", (e) => {
      self.clients.claim();
 })
 
+// Listen for fetch event to intercept while offline and defer to cache service
 self.addEventListener("fetch", (e) => {
      if (e.request.url.includes("/api")) {
           e.respondWith(

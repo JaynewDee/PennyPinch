@@ -1,6 +1,7 @@
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require('path')
 
+// Configures production bundle and manifest.json output
 const config = {
      mode: "production",
      entry: "/public/index.js",
