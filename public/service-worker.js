@@ -3,11 +3,12 @@ const DATA_CACHE_NAME = "penny-data-v1";
 const STATICS = [
      "/",
      "/index.html",
-     "/index.js",
-     "/iDb.js",
+     "dist/bundle.js",
+     // "/iDb.js",
      "/styles.css",
-     "manifest.webmanifest",
-     "/icons/dollar-coin.png"
+     "dist/manifest.json",
+     "/dist/assets/icons/icon_192x192.png",
+     "/dist/assets/icons/icon_512x512.png"
 ];
 
 self.addEventListener("install",  (e) => {
