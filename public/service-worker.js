@@ -4,9 +4,9 @@ const DATA_CACHE_NAME = "penny-data-v1";
 const STATICS = [
      "/",
      "/index.html",
-     "dist/bundle.js",
+     "/iDb.js",
      "/styles.css",
-     "dist/manifest.json",
+     "/manifest.json",
      "/dist/assets/icons/icon_192x192.png",
      "/dist/assets/icons/icon_512x512.png"
 ];
