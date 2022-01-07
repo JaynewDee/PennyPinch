@@ -1,35 +1,29 @@
-#   😃 TITLE 😃
+#   🪙 PennyPinch 🪙
 
-### SUMMARY  
-> **TAGLINE**
+### A minimal helper-bot for the save-savvy  
+> **||PennyPinch||** 
+<br>  
 
 ## *DESCRIPTION* 
-> 
+> PennyPinch is an easy-to-use budget-tracking app with a focus on delivering full progressive web app functionality.
 > 
 >>  
 >> 
 
 ## *Table of Contents*
 ### (*Internal navigation links*)
-- 
-- 
-- 
-- 
-- 
- 
-  
-> #### **Key Terms:**  
-> ##### (*External navigation links*)
->> - 
->> - 
->> - 
->> - 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Credits](#credits)
+- [License](#license)
+
 
 > *Note: The click-through links contained within the discussion sections may send you to an external site.* <br>
 ___  
 ___
 ___
-> - ### **CONTENT TITLE**
+> - ### **INSTALLATION**
 >>>  *SUBTITLE* <br>
 >>>>  
 >>>  
@@ -37,7 +31,7 @@ ___
 ___  
 ___
 ___  
-> - ### **CONTENT TITLE**
+> - ### **USAGE**
 >>>  *SUBTITLE* <br>
 >>>>  
 >>>  
@@ -45,7 +39,19 @@ ___
 ___  
 ___
 ___  
-> - ### **CONTENT TITLE**
+> - ### **FEATURES**
+>>>  *SUBTITLE* <br>
+>>>> -   
+>>>> -   
+>>>> -   
+>>>> -  
+>>>> - 
+>>>> - 
+>>>> - 
+___  
+___
+___  
+> - ### **CREDITS**
 >>>  *SUBTITLE* <br>
 >>>>  
 >>>  
@@ -53,15 +59,7 @@ ___
 ___  
 ___
 ___  
-> - ### **CONTENT TITLE**
->>>  *SUBTITLE* <br>
->>>>  
->>>  
->>> 
-___  
-___
-___  
-> - ### **CONTENT TITLE**
+> - ### **LICENSE**
 >>>  *SUBTITLE* <br>
 >>>>  
 >>>  
@@ -97,10 +95,11 @@ ___
 >>> is a budding developer currently based in Ft Worth, Texas.  He enjoys coding, long romantic hours dead asleep, walks with his dog Margot, and *creepily* referring to himself in third person.  
 >>>>  
 >>>> Here are a few of his favorite technologies at the moment:
->>>> - [Node.js](https://nodejs.org/en/)  
->>>> - [Materialize.css](https://materializecss.com/)  
+>>>> - [Tailwind.css](https://tailwindcss.com/)
 >>>> - [React.js](https://reactjs.org/)  
 >>>> - [MongoDB](https://www.mongodb.com/)  
+>>>> - [Express.js](https://expressjs.com/)
+
 >>>>  
 >>  
 >>> And here is where you can reach him [||](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR 'Javascript OR Operator') review the work he's been doing:   
