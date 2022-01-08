@@ -7,6 +7,7 @@ const STATICS = [
      "/iDb.js",
      "/styles.css",
      "/manifest.json",
+     "/index.js",
      "/dist/assets/icons/icon_192x192.png",
      "/dist/assets/icons/icon_512x512.png"
 ];
