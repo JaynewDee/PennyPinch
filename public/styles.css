@@ -1,18 +1,80 @@
 body {
   font-size: 120%;
-  font-family: Arial;
+  font-family: monospace;
+  transition: all 1s;
 }
 
-button, input {
+body.dark-theme,
+body.dark-theme button {
+  background-color: black;
+  color: white;
+  transition: all 1s;
+}
+body.dark-theme tr {
+  background-color: black;
+}
+
+.toggle {
+  margin-left: auto;
+}
+
+#header {
+  margin: 3rem auto;
+  width: 66vw;
+  text-align: center;
+}
+
+#app-title {
+  font-size: 2rem;
+  margin: 1rem auto;
+}
+
+.inputs-wrapper {
+  display: flex;
+  max-width: 33%;
+  flex-flow: column nowrap;
+  margin: 2rem auto 0rem;
+}
+.inputs-wrapper > input {
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+::placeholder {
+  text-align: center;
+  font-size: 0.66rem;
+  padding: 0.1rem;
+}
+
+button,
+input {
   font-size: 100%;
   font-family: Arial;
 }
 
+.btn-box {
+  display: flex;
+  margin: 1rem auto 3rem;
+  justify-content: center;
+}
+
+#sub-btn,
+#add-btn {
+  background: none;
+  border: none;
+  margin: 3px;
+}
+#sub-btn:hover,
+#add-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -24,17 +86,25 @@ tr:nth-child(even) {
 
 .error {
   color: red;
+  margin: 0 auto;
 }
 
-.wrapper {
-  margin: 0 auto;
-  max-width: 825px;
-  text-align: center;
+#total-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 11vw;
+  margin: 1rem auto;
+}
+#total {
+  font-size: 2rem;
 }
 
 .total {
-  font-size: 150%;
-  text-decoration: underline;
+  font-size: 0.66rem;
+  color: grey;
+  text-decoration: overline;
 }
 
 .form {
@@ -48,4 +118,9 @@ tr:nth-child(even) {
   overflow: auto;
   width: 90%;
   margin: 0 auto;
+}
+
+#myChart {
+  max-width: 90vw;
+  margin: 3rem auto;
 }
