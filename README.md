@@ -40,10 +40,6 @@
 
 ---
 
-> > > > ![Clone the Repo](./assets/README-imgs/cloning.png)
-
----
-
 ---
 
 ---
@@ -78,10 +74,6 @@
 
 ---
 
-> > > > ![Lighthouse Metrics](./assets/README-imgs/lighthouse-metrics.png)
-
----
-
 ---
 
 ---
@@ -107,6 +99,6 @@
 > > >
 > > > [GitHub](https://github.com/JaynewDee "Repositories authored by Joshua Newell Diehl")  
 > > > [Email](mailto:jdiehl2236@gmail.com)  
-> > > [Portfolio](https://jaynewdee.github.io/Personal-Portfolio-Bluev2/)
+> > > [Portfolio](https://syntheticrain.net/)
 > > >
 > > > > ~ _Let's build something awesome._
