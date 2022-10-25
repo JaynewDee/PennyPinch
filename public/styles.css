@@ -105,7 +105,7 @@ tr:nth-child(even) {
 
 .total {
   font-size: 0.66rem;
-  color: grey;
+  color: rgb(35, 35, 35);
   text-decoration: overline;
 }
 

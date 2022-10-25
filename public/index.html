@@ -9,17 +9,17 @@
       name="description"
       content="PennyPinch is a minimal, easy-to-use progressive web app for those who wish to track their spending using attractive visualizations"
     />
-    <link rel="manifest" href="/dist/manifest.json" />
+    <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="apple-touch-icon" href="/dist/assets/icons/icon_192x192.png" />
-
+    <link rel="apple-touch-icon" href="./icons/dollar-coin.png" />
+    <link rel="manifest" href="./manifest.json" />
     <title>PennyPinch</title>
   </head>
 
   <body>
     <div class="toggle">
-      <label for="toggle">Dark:</label>
-      <input type="checkbox" id="toggle-theme" />
+      <label for="toggle-theme">Dark:</label>
+      <input name="toggle" type="checkbox" id="toggle-theme" />
     </div>
     <header id="header">
       <h1 id="app-title">Penny||Pinch</h1>
@@ -35,10 +35,12 @@
       <input type="text" id="t-name" placeholder="Transaction Name" />
       <input type="number" min="0" id="t-amount" placeholder="Amount" />
       <div class="btn-box">
-        <button id="sub-btn"><i class="fa fa-minus"></i></button>
-        <button id="add-btn">
+        <span name="button" id="sub-btn">
+          <i class="fa fa-minus"></i>
+        </span>
+        <span name="add" id="add-btn">
           <i class="fa fa-plus buttons"></i>
-        </button>
+        </span>
       </div>
     </div>
 
@@ -56,7 +58,7 @@
 
     <!-- Register service worker by assignment to window navigator object -->
     <script>
-      (function () {
+      (() => {
         if ("serviceWorker" in navigator) {
           window.addEventListener("load", () => {
             navigator.serviceWorker

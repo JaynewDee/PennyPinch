@@ -6,10 +6,9 @@ const STATICS = [
   "/index.html",
   "/iDb.js",
   "/styles.css",
-  "/manifest.json",
   "/index.js",
-  "/dist/assets/icons/icon_192x192.png",
-  "/dist/assets/icons/icon_512x512.png",
+  "./icons/dollar-coin.png",
+  "./icons/dollar-coin-512.png",
 ];
 
 // Initialize service worker and caches
