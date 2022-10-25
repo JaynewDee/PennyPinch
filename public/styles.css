@@ -15,6 +15,7 @@ body.dark-theme tr {
 }
 
 .toggle {
+  max-width: 100px;
   margin-left: auto;
 }
 
@@ -38,6 +39,7 @@ body.dark-theme tr {
 .inputs-wrapper > input {
   border-radius: 5px;
   margin-top: 5px;
+  text-align: center;
 }
 
 ::placeholder {

@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const compression = require("compression");
 require("dotenv").config();
 
-// console.log(process.env.MONGODB_URI);
 const PORT = process.env.PORT || 3000;
 
 const app = express();
