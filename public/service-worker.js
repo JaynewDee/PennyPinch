@@ -8,7 +8,7 @@ const STATICS = [
   "/styles.css",
   "/index.js",
   "./icons/dollar-coin.png",
-  "./icons/dollar-coin-512.png",
+  "./icons/dollar-coin-512.png"
 ];
 
 // Initialize service worker and caches
@@ -23,16 +23,16 @@ self.addEventListener("install", (e) => {
 // Refresh cache by checking for changes
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys().then((keyList) => {
-      return Promise.all(
+    caches.keys().then((keyList) =>
+      Promise.all(
         keyList.map((key) => {
           if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
             console.log("Removing old cache data", key);
             return caches.delete(key);
           }
         })
-      );
-    })
+      )
+    )
   );
   self.clients.claim();
 });

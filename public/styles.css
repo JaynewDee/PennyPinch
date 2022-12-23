@@ -81,7 +81,9 @@ th {
   text-align: left;
   padding: 8px;
 }
-
+th {
+  font-size: 2rem;
+}
 tr:nth-child(even) {
   background-color: #dddddd;
 }
