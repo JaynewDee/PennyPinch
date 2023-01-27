@@ -25,7 +25,6 @@ request.onupgradeneeded = function (e) {
   }
 };
 
-// Checks
 request.onsuccess = function (e) {
   console.log(e.target.result);
 
@@ -57,9 +56,7 @@ function checkDatabase() {
         }
       })
         .then((response) => response.json())
-        .then((res) => {
-          if (res.length !== 0) clearStore();
-        });
+        .catch((err) => console.log(err));
     }
   };
 }
