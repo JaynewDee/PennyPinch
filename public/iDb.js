@@ -58,9 +58,7 @@ function checkDatabase() {
       })
         .then((response) => response.json())
         .then((res) => {
-          if (res.length !== 0) {
-            clearStore();
-          }
+          if (res.length !== 0) clearStore();
         });
     }
   };
